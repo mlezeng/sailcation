@@ -1,0 +1,97 @@
+
+<html>
+
+<!-- This site is a goodbye gift to Kevin Kirn as he leaves Clever-->
+
+<!-- We own nothing and earn no money from this, so please do not sue us. -->
+
+<head>
+
+<title>Kevin is on Sailcation</title>
+
+
+
+<style type="text/css">
+	.footer-links {
+    margin: 5px;
+	}
+
+	html {
+		-webkit-background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover;
+    	background-size: cover;
+	}
+
+	@-webkit-keyframes rotate {
+  		from {
+  			-webkit-transform: rotate(0deg);
+  		}
+
+  		to {
+  			-webkit-transform: rotate(360deg);
+  		}
+	}
+
+	#mohit {
+  		-webkit-animation-name: rotate;
+  		-webkit-animation-duration: 5.5s;
+  		-webkit-animation-iteration-count: infinite;
+  		-webkit-animation-timing-function: linear;
+  		position: absolute;
+	}
+
+</style>
+
+
+<script>
+
+	var x = 5;
+	var y = 5;
+	var max_x = window.innerWidth - 500;
+	var max_y = window.innerHeight - 378;
+	var xoffset = 1;
+	var yoffset = 1;
+
+	function go() {
+		moveMohit();
+	}
+
+	function moveMohit() {
+		x = x + xoffset;
+		y = y + yoffset;
+
+		//Move the image to the new location
+		document.getElementById("mohit").style.top = y+'px';
+		document.getElementById("mohit").style.left = x+'px';
+
+		//if reach boundaries, reset offset vectors
+		if ((x+xoffset > max_x) || (x+xoffset < 0))
+			xoffset *= -1;
+		if ((y+yoffset > max_y) || (y+yoffset < 0))
+			yoffset *= -1;
+
+		window.setTimeout('moveMohit()',10);
+		//call moveLogo every 100 ms
+	}
+
+</script>
+
+
+
+
+</head>
+
+
+
+<body background="img/bg_stars.gif" onload="go()">
+	<img id="mohit" src="img/mohit.png">
+
+	<h1 style="color:white; text-align:center;">The Kevin you are looking for is on Sailcation</h1>
+
+<iframe width=100% height=100% src="https://www.youtube.com/embed/388aeg7lRyE?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</body>
+
+</html>
+
